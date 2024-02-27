@@ -7,7 +7,7 @@ document.addEventListener(`DOMContentLoaded`,() => {
     canvas.height = window.innerHeight;
 
     const duckImg = new Image();
-    duckImg.src = `Images/duckGreen1.png`;
+    duckImg.src = './assets/images/duckGreen1.png';
 
     const Duck = (x, y, width, height,) => ({
         x,
