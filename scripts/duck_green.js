@@ -12,16 +12,11 @@ document.addEventListener(`DOMContentLoaded`,() => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-<<<<<<< HEAD:script.js
     for (let i =0; i < 3; i++ ) {
         const duckImg = new Image();
         duckImg.src = `Images/GreenDuckH${i}.png`;
         duckSprites.push(duckImg);
     }
-=======
-    const duckImg = new Image();
-    duckImg.src = './assets/images/duckGreen1.png';
->>>>>>> b908b6088ca5f14aa060bfcb6584b0e5e8605c6f:scripts/duck_green.js
 
     const drawDuck = () => {
        ctx.clearRect(0, 0, canvas.width, canvas.height);
