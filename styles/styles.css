@@ -1,10 +1,233 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  position: relative;
+  background-color: lightskyblue;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
+  margin: 0;
+  overflow: hidden;
+  cursor: none;
 }
 
-canvas {
-    background-color: aquamarine;
+/* #canvas1 {
+  background-color: aquamarine;
+  border: 5px solid black;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 600px;
+  width: 600px;
+} */
+#field-container {
+  background-image: url('../assets/images/sprite main.webp');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: contain;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+#dog1 {
+  position: absolute;
+  width: 10vw;
+  height: 9vw;
+  z-index: 3;
+  left: 0%;
+  bottom: 8%;
+  background-image: url("../assets/images/dogeWalking.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;
+
+  animation-name: dogMoveAnimation;
+  animation-duration: 3.3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
 }
 
+@keyframes dogMoveAnimation {
+  0% {
+    left: 0%;
+  }
+
+  100% {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+#dog1.found {
+  left: 45%;
+  background-image: url("../assets/images/found.png");
+  animation-name: dogFoundAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+#dog1.found.jump {
+  left: 45%;
+  background-image: url("../assets/images/pawelJumper.gif");
+  background-size: contain;
+  animation-name: dogJumpAnimation;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+}
+
+@keyframes dogJumpAnimation {
+  0% {
+    bottom: 10%
+  }
+
+  50% {
+    transform: scale(50%);
+    bottom: 30%;
+  }
+
+  90% {
+    transform: scale(25%);
+    bottom: 10%;
+    opacity: 70%;
+  }
+
+  100% {
+    transform: scale(10%);
+    bottom: 10%;
+    opacity: 0%;
+  }
+}
+
+#dog-container {
+  z-index: 1
+}
+
+#dog2.gotOne {
+  position: absolute;
+  width: 10vw;
+  height: 8vw;
+  left: 48%;
+  bottom: 10%;
+  background-image: url("../assets/images/gotOne.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  animation-name: dogGotOneAnimation;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: scale(120%);
+  opacity: 0;
+}
+
+@keyframes dogGotOneAnimation {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  30% {
+    bottom: 26%
+  }
+
+  60% {
+    bottom: 26%
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 0%;
+    opacity: 0;
+  }
+}
+
+#dog2.gotTwo {
+  position: absolute;
+  width: 10vw;
+  height: 8vw;
+  left: 48%;
+  bottom: 10%;
+  background-image: url("../assets/images/gotTwo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  animation-name: dogGotTwoAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: scale(120%);
+  opacity: 0;
+}
+
+@keyframes dogGotTwoAnimation {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  30% {
+    bottom: 26%
+  }
+
+  60% {
+    bottom: 26%
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 0%;
+    opacity: 0;
+  }
+}
+
+
+#dog2.laugh {
+  position: absolute;
+  width: 10vw;
+  height: 8vw;
+  left: 48%;
+  bottom: 8%;
+  opacity: 0;
+  background-image: url("../assets/images/gotTwo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  animation-name: dogLaughAnimation;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: scale(120%);
+}
+
+@keyframes dogLaughAnimation {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  30% {
+    bottom: 26%
+  }
+
+  60% {
+    bottom: 26%
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 0%;
+    opacity: 0;
+  }
+}
