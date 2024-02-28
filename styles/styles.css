@@ -1,10 +1,86 @@
 body {
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
+  margin: 0;
+  overflow: hidden;
+  height: 100%;
+  background-size: cover;
 }
 
 canvas {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 
+#game-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  border: 1px solid black;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  background: url("../assets/images/background.png") no-repeat;
+  background-size: 100% 100%;
+  left: 50%;
+  top: 50%;
+  z-index: 0;
+}
+.dog {
+  position: absolute;
+
+  top: 78%;
+  left: 10%;
+  width: 290px;
+  height: 160px;
+  background: url("../assets/images/dog/dogsniffing.png");
+  background-size: 1525px 155px;
+  animation: dog-sniff 1.5s steps(4) infinite;
+  z-index: 5;
+}
+
+@keyframes dog-sniff {
+  0% {
+    background-position: -1220px 0;
+    left: 5%;
+  }
+  100% {
+    background-position: 0 0;
+    left: 40%;
+  }
+}
+.dog.found.jump {
+  top: 78%;
+  left: 10%;
+  width: 290px;
+  height: 160px;
+  border: 1px solid red;
+  position: absolute;
+  background-image: url("../assets/images/dog/dogjumping.png");
+  background-size: 1400px 155px;
+  animation: dog-found-jump 1s steps(3) infinite 1.5;
+  z-index: 9;
+}
+@keyframes dog-found-jump {
+  0% {
+    bottom: 10%
+
+  }
+
+  50% {
+    transform: scale(50%);
+    bottom: 30%;
+  }
+
+  90% {
+    transform: scale(25%);
+    bottom: 10%;
+    opacity: 70%;
+  }
+
+  100% {
+    transform: scale(1%);
+    bottom: 10%;
+    opacity: 0%;
+  }
+}
