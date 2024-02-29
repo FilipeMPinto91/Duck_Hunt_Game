@@ -3,8 +3,8 @@ body {
   overflow: hidden;
   height: 100%;
   background-size: cover;
+  z-index: 1;
 }
-
 canvas {
   background-color: aquamarine;
   margin: 0;
@@ -76,7 +76,7 @@ canvas {
   background-size: 100% 100%;
   left: 50%;
   top: 50%;
-  z-index: 0;
+  z-index: 1;
 }
 .dog {
   position: absolute;
@@ -87,8 +87,10 @@ canvas {
   height: 160px;
   background: url("../assets/images/dog/dogsniffing.png");
   background-size: 1525px 155px;
-  animation: dog-sniff 1.5s steps(4) infinite;
-  z-index: 5;
+  animation: dog-sniff 1.75s steps(4) forwards;
+  background-repeat: no-repeat;
+
+  z-index: 3;
 }
 
 @keyframes dog-sniff {
@@ -96,27 +98,52 @@ canvas {
     background-position: -1220px 0;
     left: 5%;
   }
-  100% {
+  25% {
+    left: 15%;
+  }
+  50% {
+    left: 25%;
+  }
+  75% {
+    left: 35%;
+  }
+  99% {
     background-position: 0 0;
-    left: 40%;
+    left: 50%;
+    opacity: 1; /* Added this line */
+  }
+  100% {
+    opacity: 0; /* This line makes the .dog element instantly invisible */
   }
 }
-.dog.found.jump {
-  top: 78%;
-  left: 10%;
+.dog.found {
+  top: 75%;
   width: 290px;
   height: 160px;
-  border: 1px solid red;
-  position: absolute;
-  background-image: url("../assets/images/dog/dogjumping.png");
-  background-size: 1400px 155px;
-  animation: dog-found-jump 1s steps(3) infinite 1.5;
-  z-index: 9;
+  left: 45%;
+  background-image: url("../assets/images/dog/found.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  z-index: 4;
+  animation: dog-found 1.75s steps(1) forwards;
 }
-@keyframes dog-found-jump {
-  0% {
-    bottom: 10%
 
+.dog.jump {
+  position: absolute;
+  border: 1px solid red;
+  left: 45%;
+  width: 290px;
+  height: 160px;
+  background-image: url("../assets/images/dog/jump.png");
+  background-size: 525px 155px;
+  animation: dog-jump 1.75s steps(3);
+  z-index: 5;
+}
+
+@keyframes dog-jump {
+  0% {
+    background-position: -61.5px 0;
+    bottom: 10%;
   }
 
   50% {
@@ -131,24 +158,135 @@ canvas {
   }
 
   100% {
+    background-position: 0 0;
     transform: scale(1%);
     bottom: 10%;
     opacity: 0%;
   }
 }
 
+.dog.got-one {
+  position: absolute;
+  width: 10vw;
+  height: 8vw;
+  left: 48%;
+  bottom: 10%;
+  background-image: url("../assets/images/dog/dog1duck.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  animation-name: dog-1-duck;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: scale(120%);
+  opacity: 0;
+}
 
+@keyframes dog-1-duck {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
 
+  30% {
+    bottom: 26%;
+  }
 
+  60% {
+    bottom: 26%;
+  }
 
+  99% {
+    opacity: 1;
+  }
 
+  100% {
+    bottom: 0%;
+    opacity: 0;
+  }
+}
 
+.dog.got-two {
+  position: absolute;
+  width: 10vw;
+  height: 8vw;
+  left: 48%;
+  bottom: 10%;
+  background-image: url("../assets/images/dog/dog2ducks.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  animation-name: dog-2-ducks;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: scale(120%);
+  opacity: 0;
+}
 
+@keyframes dog-2-ducks {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
 
+  30% {
+    bottom: 26%;
+  }
 
+  60% {
+    bottom: 26%;
+  }
 
+  99% {
+    opacity: 1;
+  }
 
+  100% {
+    bottom: 0%;
+    opacity: 0;
+  }
+}
 
+.dog.laugh {
+  position: absolute;
+  width: 10vw;
+  height: 8vw;
+  left: 48%;
+  bottom: 8%;
+  opacity: 0;
+  background-image: url("../assets/images/dog/doglaugh.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  animation-name: dog-laugh;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  transform: scale(120%);
+}
+
+@keyframes dog-laugh {
+  0% {
+    bottom: 0%;
+    opacity: 1;
+  }
+
+  30% {
+    bottom: 26%;
+  }
+
+  60% {
+    bottom: 26%;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    bottom: 0%;
+    opacity: 0;
+  }
+}
 
 #crosshair {
   position: fixed;
@@ -181,8 +319,4 @@ canvas {
   border: 3px solid rgb(162, 242, 119);
   border-radius: 10px;
 }
-
-
-
-
 
