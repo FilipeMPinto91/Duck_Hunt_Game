@@ -8,6 +8,10 @@ const bullet3 = document.querySelector(".bullet3");
 
 //Audio
 
+let flyOutCounter = 0;
+let maxRounds = 5;
+let totalDucksKilled = 0;
+
 let roundsCounter = 1;
 let maxFlyOut = 3;
 let flyOut = 1;
@@ -16,6 +20,7 @@ let ducksPerFlyOut = 2;
 let maxMissedDucksToLose = 3;
 let missedDucks = 0;
 let bulletCounter = 3;
+let ducksKilledFlyOut = 0; // rever linha 151
 
 let isEnableShooting = false;
 let isGameOver = false;
@@ -153,7 +158,7 @@ function checkDucksKilledAndUpdate(){
         isFlyOutFinished = true;
         ducksKilledFlyOut = 0;
         clearTimeout(flyOutTimeOut);
-        setTimeout(() => finishFlyOut(), 1000);
+        setTimeout(finishWave, 1500);
     }
 }
 
@@ -233,6 +238,8 @@ function disableShooting() {
     document.getElementById("crosshair").style.backgroundImage = 'url(/sprites/forbidden.png)';
 }
 
+
+
 function updateFlyOutAndRounds() {
     let flyOut = document.querySelector(".flyOut");
     let rounds = document.querySelector(".round-number");
@@ -244,7 +251,7 @@ function updateFlyOutAndRounds() {
 
 function refreshScore() {
     let score = document.querySelector(".score");
-    score.innerHTML = `SCORE :     ${totalDucksKilled * 500}`;
+    score.innerHTML = `SCORE :     ${totalDucksKilled * 100}`;
 }
 
 function showBullets() {

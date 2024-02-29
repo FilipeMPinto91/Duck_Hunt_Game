@@ -7,6 +7,11 @@ body {
 
 canvas {
   background-color: aquamarine;
+  margin: 0;
+  overflow: hidden;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
 }
 
 
@@ -29,14 +34,16 @@ canvas {
 
 #startButton{
   width: 100%;
-  font-size: x-large;
-  transition: 0.5s ease;
-  color: red;
+  font-size: 2em;
+  transition: 0.9s ease;
+  color: rgb(243, 23, 23);
+  font-style: oblique;
+  
 }
 
 #startButton:hover{
   letter-spacing: 10px;
-  color: rgb(0, 215, 253);
+  color: rgb(86, 201, 221);
   cursor: pointer;
 }
 
