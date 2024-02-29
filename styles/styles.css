@@ -9,6 +9,51 @@ canvas {
   background-color: aquamarine;
 }
 
+
+#startScreen{
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 20;
+  background-image: url("../assets/images/startScreen/startBackground.jpg");
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+.startScreen__content{
+  position: relative;
+  top: 45%;
+  margin: auto;
+}
+
+#startButton{
+  width: 100%;
+  font-size: x-large;
+  transition: 0.5s ease;
+  color: red;
+}
+
+#startButton:hover{
+  letter-spacing: 10px;
+  color: rgb(0, 215, 253);
+  cursor: pointer;
+}
+
+.startScreen__content__box{
+  display: flex;
+  flex-wrap: nowrap;
+  margin: auto;
+  width: 50%;
+  font-size: large;
+  text-align: center;
+  color: white;
+}
+
+
+
+
+
 #game-container {
   display: flex;
   justify-content: center;
@@ -84,3 +129,53 @@ canvas {
     opacity: 0%;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#crosshair {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  background-image: url(crosshair);
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+
+#gun-shoot{
+  background-image: url(gun);
+  /** more to implement */
+
+}
+
+#bullet-counter {
+  position: fixed;
+  left: 5%;
+  background-color: black;
+  color: whitesmoke;
+  z-index: 5;
+  bottom: 2%;
+  border: 3px solid rgb(162, 242, 119);
+  border-radius: 10px;
+}
+
+
+
+
+
