@@ -7,12 +7,74 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body>
+
+    <div id="startScreen">
+      <div class="startScreen__content">
+          <br>
+          <br>
+          <div class="startScreen__content__box" onclick="launchApplication()">
+              <h2 id="startButton">START GAME</h2>
+          </div>
+      </div>
+       <!-- Audio here??? -->
+    </div>
+
+    
+      <!-- Or audio here??? -->
+
+
+  </div>
     <canvas id="canvas" width="1024" height="576"></canvas>
     <div id="game-container">
       <button id="playButton">Play Game</button>
       <div class="dog"></div>
     </div>
 
+    <div id="gun-shoot" class="gun"></div>
+    <div id="crosshair"></div>
+
+    
+    <div id="game-starting-timer"></div>
+    <div id="round-number-display"></div>
+
+    
+    <div class="stats-container">
+      <div class="score"></div>
+      <div class="bottom-section">
+          <div class="flyOut"></div>
+          <div class="round-number"></div>
+      </div>
+  </div>
+
+  <div id="bullet-counter">
+    <div class="bullet1"></div>
+    <div class="bullet2"></div>
+    <div class="bullet3"></div>
+    <img src="sprites/bullet-counter/bullet-counter.png">
+
+    <div id="flyOut-time-left"></div>
+    <div id="game-over" class="game-over">
+        <h1>Game Over</h1>
+        <p>Score: <span id="score">0</span></p>
+        <button id="restart-button">Restart</button>
+    </div>
+
+
+  <div class="ducks-bar">
+    <div class="ducks-bar-inner">
+      Gone Away
+    </div>
+    <div class="duckies">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+
+
+</div>
+
+    <script src="./scripts/startSreen.js"></script>
     <script src="./scripts/duck.js"></script>
     <script src="./scripts/dog.js"></script>
     <script src="./scripts/main.js"></script>
