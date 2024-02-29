@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Duck Hunt Game</title>
-    <link rel="stylesheet" href="./styles/styles.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
     <canvas id="canvas" width="1024" height="576"></canvas>
-    <button id="playButton">Play Game</button>
-    
+    <div id="game-container">
+      <button id="playButton">Play Game</button>
+      <div class="dog"></div>
+      <!-- <div class="dog found jump"></div> -->
+    </div>
+
     <script src="./scripts/duck.js"></script>
     <script src="./scripts/dog.js"></script>
     <script src="./scripts/main.js"></script>
-</body>
+  </body>
 </html>
