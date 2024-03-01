@@ -103,6 +103,8 @@ function startFlyOut(){
 
 function finishFlyOut(){
     clearTimeout(flyOutTimeOut);
+
+
 //Game over
 
 if(missedDucks >= maxMissedDucksToLose){
@@ -188,12 +190,13 @@ function displayGameStartingTimer(seconds) {
             setTimeout(() => timerElement.remove(), 1000);
         }
     };
-    // Initiliaze timer
+   
     updateTimer();
 }
 
 
 //Flyout TIMER DISPLAYER
+
 let flyOutEndTimer;
 const flyOutTimeContainer = document.getElementById('flyOut-time-left');
 const timerElement = document.createElement('div');
@@ -244,7 +247,7 @@ function updateFlyOutAndRounds() {
     let flyOut = document.querySelector(".flyOut");
     let rounds = document.querySelector(".round-number");
     flyOut.innerHTML = `flyOut : ${flyOutCounter} / ${maxFlyOut} `;
-    //rounds.innerHTML = `Round : ${roundsCounter} / ${maxRounds}`; //Uncomment to set a max number of rounds
+  
     rounds.innerHTML = `Round : ${roundsCounter} /∞`;
 }
 

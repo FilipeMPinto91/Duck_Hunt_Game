@@ -153,19 +153,241 @@ canvas {
 #crosshair {
  
   background-image: url(crosshair);
-  /** more to implement */
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  width: 32px;
+  height: 32px;
+  background-image: url("../assets/images/crosshair/crosshair-png-cliparts-goal-ico-11563014739gqoiclsnsh.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
 }
 
 
 #gun-shoot{
-  background-image: url(gun);
-  /** more to implement */
+  background-image: url("../assets/images/gun/gun1.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 20%;
+  height: 20%;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
 
 }
 
 #bullet-counter {
-  /** more to implement */
+  position: fixed;
+  left: 5%;
+  background-color: black;
+  color: whitesmoke;
+  z-index: 5;
+  bottom: 2%;
+  border: 3px solid red;
+  border-radius: 10px;
 }
+
+
+
+
+
+
+#bullet-counter img {  /**------------------------------- */
+  width: 70px;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.bullet1,
+.bullet2,
+.bullet3 { /**------------------------------- */
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 25px;
+  background-color: black;
+  z-index: 1;
+  display: none;
+}
+
+.bullet1 { /**------------------------------- */
+  right: 45px;
+}
+
+.bullet2 {/**------------------------------- */
+  right: 25px;
+}
+
+.bullet3 { /**------------------------------- */
+  right: 5px;
+}
+
+#game-starting-timer { /**------------------------------- */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#round-element { /**------------------------------- */
+  position: absolute;
+  top: 20%;
+  left: 1%;
+  z-index: 5;
+  animation-name: roundAnimation;
+  animation-fill-mode: forwards;
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: linear;
+  font-size: 800%;
+  font-family: PixelFont;
+}
+
+@keyframes roundAnimation {
+  0% {
+    left: 0%;
+    opacity: 0%
+  }
+
+  20% {
+    left: 25%;
+    opacity: 100%;
+  }
+
+  80% {
+    left: 50%;
+    opacity: 100%
+  }
+
+  90% {
+    opacity: 0%;
+  }
+
+  100% {
+    left: 100%;
+    opacity: 0%;
+  }
+}
+
+#flyOut-time-left { /**------------------------------- */
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 1%;
+  right: 3%;
+  background-color: black;
+  color: rgb(238, 233, 208);
+  z-index: 5;
+  width: 140px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid red;
+  font-family: PixelFont;
+  font-size: 1.75vw;
+}
+
+.stats-container {/**------------------------------- */
+  position: fixed;
+  bottom: 2%;
+  right: 3%;
+  width: 15%;
+  height: 18%;
+  border-radius: 10px;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.bottom-section {
+  height: 60%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.score,
+.flyOut,
+.round-number {
+  height: 50%;
+  width: 50%;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  border: 3px solid red;
+  border-radius: 10px;
+  font-size: 1.5vw;
+  font-family: PixelFont;
+}
+
+.score {
+  font-size: 2vw;
+  height: 100% !important;
+  width: 100% !important;
+}
+
+
+
+.ducks-bar {
+  font-size: 2Vh;
+  background-color: black;
+  color: whitesmoke;
+  position: fixed;
+  bottom: 1.5%;
+  right: 64%;
+  width: 17%;
+  height: 8%;
+  border-radius: 10px;
+  z-index: 5;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+  border: 3px solid red
+}
+
+.ducks-bar-inner {
+  height: 100%;
+  font-size: 260%;
+  font-family: PixelFont;
+  margin-left: 0.6vh;
+  margin-right: 0.6vh;
+  margin-bottom: 0.1vw;
+  margin-top: 0.1vw;
+  overflow: hidden;
+}
+
+.duckies {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  color: white;
+  margin-bottom: 4%;
+  margin-top: 4%;
+  margin-left: 5%;
+  margin-right: 1%;
+  overflow: hidden;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  font-size: 1.8vw;
+}
+
+.game-over {
+  /* to implement */
+}
+
 
 
 
