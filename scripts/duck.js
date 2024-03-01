@@ -11,6 +11,9 @@ let isDuckAlive = true;
 let duckSpeedX = Math.random() * 10 -5;
 let duckSpeedY = Math.random() * 10 -5;
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
 for (let i =0; i < 3; i++ ) {
         const duckImg = new Image();
         duckImg.src = `assets/images/GreenDuckH${i}.png`;
@@ -87,7 +90,7 @@ setInterval(() => {
         duckSpeedY = Math.random() * 10 -5;
 }, 5000);
 
-const startDuckGame = () => {
-    canvas.addEventListener("click", shoot);
-    animateDuck();
-}
+
+canvas.addEventListener("click", shoot);
+animateDuck();
+
