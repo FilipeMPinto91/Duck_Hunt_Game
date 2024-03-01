@@ -151,17 +151,9 @@ canvas {
 
 
 #crosshair {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  width: 32px;
-  height: 32px;
+ 
   background-image: url(crosshair);
-  background-size: contain;
-  background-repeat: no-repeat;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
+  /** more to implement */
 }
 
 
@@ -172,14 +164,7 @@ canvas {
 }
 
 #bullet-counter {
-  position: fixed;
-  left: 5%;
-  background-color: black;
-  color: whitesmoke;
-  z-index: 5;
-  bottom: 2%;
-  border: 3px solid rgb(162, 242, 119);
-  border-radius: 10px;
+  /** more to implement */
 }
 
 
