@@ -21,3 +21,17 @@ function launchWalkoutAnimation() {
 launchWalkoutAnimation();
 
 
+function showDuck(killedDucks) {
+  let dogElement = document.createElement("div");
+  let gameContainer = document.getElementById("game-container"); 
+  dogElement.setAttribute("class", "dog2");
+  gameContainer.appendChild(dogElement); 
+  if (killedDucks === 1) {
+    dogElement.classList.add("got-one");
+  } else {
+    dogElement.classList.add("got-two");
+  }
+}
+showDuck(1);
+setTimeout(() => showDuck(2), 2000); 
+
