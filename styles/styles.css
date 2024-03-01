@@ -3,19 +3,17 @@ body {
   overflow: hidden;
   height: 100%;
   background-size: cover;
+  background-repeat: no-repeat;
   z-index: 1;
 }
 canvas {
-  background-color: aquamarine;
-  margin: 0;
-  overflow: hidden;
-  background-size: cover;
+  background-color: transparent;
   height: 100%;
   width: 100%;
 }
 
 
-#startScreen{
+/* #startScreen{
   position: absolute;
   top: 0;
   width: 100%;
@@ -55,7 +53,7 @@ canvas {
   font-size: large;
   text-align: center;
   color: white;
-}
+} */
 
 
 
@@ -128,11 +126,11 @@ canvas {
 }
 
 .dog.jump {
+  background-image: url("../assets/images/dog/jump.png");
   position: absolute;
   left: 45%;
   width: 370px;
   height: 160px;
-  background-image: url("../assets/images/dog/jump.png");
   background-size: 900px 155px;
   animation: dog-jump 1s steps(2);
   z-index: 5;
@@ -167,124 +165,113 @@ canvas {
   position: absolute;
   width: 180px;
   height: 130px;
-  border: 1px solid red;
   left: 48%;
   bottom: 13%;
   background-image: url("../assets/images/dog/dog1duck.png");
   background-size: 100%;
   animation-name: dog-1-duck;
-  animation-duration: 2.5s;
+  animation-duration: 1.65s;
   animation-iteration-count: 1;
-  animation-timing-function: linear;
+  animation-timing-function: linear; 
   background-repeat: no-repeat;
+  opacity: 0;
 
   z-index: 1;
 }
 
 @keyframes dog-1-duck {
-  0% {
+  0%,100% {
     bottom: 0%;
-    opacity: 1;
+    opacity: 0; 
   }
 
   30% {
-    bottom: 26%;
+    bottom: 26.5%; 
+    opacity: 1; 
   }
 
-  60% {
-    bottom: 26%;
-  }
-
-  99% {
-    opacity: 1;
-  }
-
-  100% {
-    bottom: 0%;
-    opacity: 0;
+  80%, 100% {
+    bottom: 0%; 
+    opacity: 0; 
   }
 }
 
 .dog2.got-two {
   position: absolute;
-  width: 180px;
+   width: 180px;
   height: 130px;
-  border: 1px solid red;
   left: 48%;
   bottom: 13%;
+  opacity: 0;
   background-image: url("../assets/images/dog/dog2ducks.png");
   background-size: 100%;
   animation-name: dog-2-ducks;
-  animation-duration: 2.5s;
+  animation-duration: 1.65s;
   animation-iteration-count: 1;
   animation-timing-function: linear;
   background-repeat: no-repeat;
+  transform: scale(120%);
 
   z-index: 1;
 }
 
 @keyframes dog-2-ducks {
-  0% {
+  0%, 100% {
     bottom: 0%;
-    opacity: 1;
+    opacity: 0; 
   }
 
   30% {
-    bottom: 26%;
+    bottom: 30.5%; 
+    opacity: 1; 
   }
 
-  60% {
-    bottom: 26%;
+  70% {
+    bottom: 20.5%; 
   }
 
-  99% {
-    opacity: 1;
-  }
-
-  100% {
-    bottom: 0%;
-    opacity: 0;
+  80%, 100% {
+    bottom: 0%; 
+    opacity: 0; 
   }
 }
 
 .dog2.laugh {
   position: absolute;
-  width: 10vw;
-  height: 8vw;
   left: 48%;
-  bottom: 8%;
-  opacity: 0;
-  background-image: url("../assets/images/dog/doglaugh.png");
-  background-size: 100%;
+  width: 190px;
+  height: 130px;
+  bottom: 0; 
   background-repeat: no-repeat;
-  animation-name: dog-laugh;
-  animation-duration: 3s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
+  opacity: 0; 
+  background-image: url("../assets/images/dog/doglaugh.png");
+  background-size: 380px 130px; 
+  animation: dog-laugh 1.75s steps(1) ;
+  z-index: 2;
   transform: scale(120%);
 }
 
 @keyframes dog-laugh {
   0% {
+    background-position: 0 0; 
     bottom: 0%;
-    opacity: 1;
+    opacity: 0; 
   }
 
   30% {
-    bottom: 26%;
+    bottom: 24.5%; 
+    opacity: 1; 
   }
 
-  60% {
-    bottom: 26%;
+  70% {
+    background-position: -190px 0; 
+    bottom: 24.5%; 
   }
 
-  99% {
-    opacity: 1;
-  }
-
-  100% {
-    bottom: 0%;
-    opacity: 0;
+  80%, 100% {
+    background-position: -190px 0; 
+    bottom: 0%; 
+    opacity: 0; 
   }
 }
 
@@ -317,9 +304,9 @@ canvas {
   transform: translateX(-50%);
   z-index: 3;
 
-}
+/* } */
 
-#bullet-counter {
+/* #bullet-counter {
   position: fixed;
   left: 5%;
   background-color: black;
@@ -328,7 +315,7 @@ canvas {
   bottom: 2%;
   border: 3px solid red;
   border-radius: 10px;
-}
+} */ */
 
 
 
