@@ -13,7 +13,7 @@ canvas {
 }
 
 
-/* #startScreen{
+#startScreen{
   position: absolute;
   top: 0;
   width: 100%;
@@ -53,7 +53,7 @@ canvas {
   font-size: large;
   text-align: center;
   color: white;
-} */
+}
 
 
 
@@ -275,7 +275,7 @@ canvas {
   }
 }
 
-/* #crosshair {
+ #crosshair {
   position: fixed;
   top: 0;
   left: 0;
@@ -293,10 +293,10 @@ canvas {
 #gun-shoot{
   background-image: url(gun);
   /** more to implement */
+}
 
-/* } */
 
-/* #bullet-counter {
+#bullet-counter {
   position: fixed;
   left: 5%;
   background-color: black;
@@ -305,5 +305,4 @@ canvas {
   bottom: 2%;
   border: 3px solid rgb(162, 242, 119);
   border-radius: 10px;
-} */ */
-
+}
