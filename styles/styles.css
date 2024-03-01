@@ -55,10 +55,6 @@ canvas {
   color: white;
 }
 
-
-
-
-
 #game-container {
   display: flex;
   justify-content: center;
@@ -75,6 +71,7 @@ canvas {
   top: 50%;
   z-index: 3;
 }
+
 .dog {
   position: absolute;
 
@@ -282,19 +279,12 @@ canvas {
   pointer-events: none;
   width: 32px;
   height: 32px;
-  background-image: url(crosshair);
+  background-image: url(../assets/images/Misc/crosshair.png);
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 9999;
   transform: translate(-50%, -50%);
 }
-
-
-#gun-shoot{
-  background-image: url(gun);
-  /** more to implement */
-}
-
 
 #bullet-counter {
   position: fixed;
@@ -305,4 +295,19 @@ canvas {
   bottom: 2%;
   border: 3px solid rgb(162, 242, 119);
   border-radius: 10px;
+}
+
+#game-starting-timer{
+  display: flex;
+  justify-content: center;
+}
+
+#round-number-display{
+  display: flex;
+  justify-content: center;
+}
+
+.stats-container{
+  display: flex;
+  justify-content: center;
 }
