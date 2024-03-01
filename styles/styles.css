@@ -304,9 +304,9 @@ canvas {
   transform: translateX(-50%);
   z-index: 3;
 
-/* } */
 
-/* #bullet-counter {
+
+ #bullet-counter {
   position: fixed;
   left: 5%;
   background-color: black;
@@ -315,7 +315,7 @@ canvas {
   bottom: 2%;
   border: 3px solid red;
   border-radius: 10px;
-} */ */
+} 
 
 
 
