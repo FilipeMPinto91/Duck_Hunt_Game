@@ -27,6 +27,9 @@ for (let i = 0; i < 4; i++) {
 }
 
 const drawDuck = () => {
+    //    const spawnX = canvas.width/2 - duckWidth/2;
+    //    const spawnY = canvas.height/1.5 - duckHeight/2;
+
        ctx.clearRect(0, 0, canvas.width, canvas.height);
        ctx.drawImage(duckSprites[currentFrameIndex], duckX, duckY, duckWidth, duckHeight);
        currentFrameIndex = (currentFrameIndex + 1) % duckSprites.length;
@@ -92,5 +95,4 @@ setInterval(() => {
 
 
 canvas.addEventListener("click", shoot);
-animateDuck();
 

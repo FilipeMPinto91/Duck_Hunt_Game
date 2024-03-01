@@ -6,8 +6,6 @@ const bullet1 = document.querySelector(".bullet1");
 const bullet2 = document.querySelector(".bullet2");
 const bullet3 = document.querySelector(".bullet3");
 
-//Audio
-
 let flyOutCounter = 0;
 let maxRounds = 5;
 let totalDucksKilled = 0;
@@ -28,29 +26,29 @@ let isFlyOutFinished = false;
 let isRoundFinished = false;
 let flyOutTimeOut;
 
-document.addEventListener("click", () => {
-    if(isEnableShooting){
-        if(bulletCounter > 0){
-            gunShootContainer.play();
-            bulletCounter--;
-            switch(bulletCounter){
-                case 2:
-                    bullet3.style.display = "none";
-                    break;
-                case 1:
-                    bullet2.style.display = "none";
-                    break;
-                case 0:
-                    bullet1.style.display = "none";
-                    break;
-            }
-        }
-    }
+// document.addEventListener("click", () => {
+//     if(isEnableShooting){
+//         if(bulletCounter > 0){
+//             gunShootContainer.play();
+//             bulletCounter--;
+//             switch(bulletCounter){
+//                 case 2:
+//                     bullet3.style.display = "none";
+//                     break;
+//                 case 1:
+//                     bullet2.style.display = "none";
+//                     break;
+//                 case 0:
+//                     bullet1.style.display = "none";
+//                     break;
+//             }
+//         }
+//     }
 
-    checkBulletsAndUpdate()
-    checkDucksKilledAndUpdate()
-    refreshScore();
-});
+//     checkBulletsAndUpdate()
+//     checkDucksKilledAndUpdate()
+//     refreshScore();
+// });
 
 function play(){
     hideMainMenu();
@@ -90,27 +88,26 @@ function startFlyOut(){
     showBullets();
     clearTimeout(roundsCounter);
     setCountdownToFlyOutEnd();
-    EnableShooting();
+    enableShooting();
     updateFlyOutAndRounds();
     checkBulletsAndUpdate();
     checkDucksKilledAndUpdate();
     displayFlyOutTimer(10);
 
     for(let i = 0; i < ducksPerFlyOut; i++){
-       spawDuck(roundsCounter)
+        animateDuck(roundsCounter);
     }
 }
 
 function finishFlyOut(){
     clearTimeout(flyOutTimeOut);
-//Game over
 
-if(missedDucks >= maxMissedDucksToLose){
-    disableShooting();
-    deleteAllDucks();
-    clearTimeout(flyOutTimeOut);
-    displayGameOver(totalDucksKilled * 100);
-    return;
+    if(missedDucks >= maxMissedDucksToLose){
+        disableShooting();
+        deleteAllDucks();
+        clearTimeout(flyOutTimeOut);
+        displayGameOver(totalDucksKilled * 100);
+        return;
 }
 
 if(timeOutCounter === 3){
@@ -134,7 +131,7 @@ function setCountdownToFlyOutEnd(){
     flyOutTimeOut = setTimeout(() => {
         if(!isFlyOutFinished){
             isFlyOutFinished = true;
-            deleteAllDucks();
+            // deleteAllDucks();
             finishFlyOut();
         }
    }, timeToFlyOut);
@@ -233,10 +230,10 @@ function enableShooting() {
     document.getElementById("crosshair").style.backgroundImage = 'url(/sprites/crosshair.png)';
 }
 
-function disableShooting() {
-    isEnableShooting = false;
-    document.getElementById("crosshair").style.backgroundImage = 'url(/sprites/forbidden.png)';
-}
+// function disableShooting() {
+//     isEnableShooting = false;
+//     document.getElementById("crosshair").style.backgroundImage = 'url(/sprites/forbidden.png)';
+// }
 
 
 
@@ -265,9 +262,9 @@ function hideMainMenu() {
     mainMenu.classList.add("hide-container");
 }
 
-function stopIntroAudio() {
-    const introAudio = document.getElementById('intro-audio');
-    introAudio.pause();
-    introAudio.currentTime = 0;
-}
+// function stopIntroAudio() {
+//     const introAudio = document.getElementById('intro-audio');
+//     introAudio.pause();
+//     introAudio.currentTime = 0;
+// }
 
