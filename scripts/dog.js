@@ -20,12 +20,11 @@ function launchWalkoutAnimation() {
 }
 launchWalkoutAnimation();
 
-
 function showDuck(killedDucks) {
   let dogElement = document.createElement("div");
-  let gameContainer = document.getElementById("game-container"); 
+  let gameContainer = document.getElementById("game-container");
   dogElement.setAttribute("class", "dog2");
-  gameContainer.appendChild(dogElement); 
+  gameContainer.appendChild(dogElement);
   if (killedDucks === 1) {
     dogElement.classList.add("got-one");
   } else {
@@ -33,5 +32,14 @@ function showDuck(killedDucks) {
   }
 }
 showDuck(1);
-setTimeout(() => showDuck(2), 2000); 
+setTimeout(() => showDuck(2), 2000);
 
+
+function dogLaugh() {
+  let dogElement = document.createElement("div");
+  let dogContainer = document.getElementById("game-container");
+  dogElement.setAttribute("class", "dog2");
+  dogContainer.appendChild(dogElement);
+  dogElement.classList.add("laugh");
+}
+dogLaugh();
