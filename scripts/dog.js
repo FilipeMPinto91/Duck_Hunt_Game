@@ -29,11 +29,8 @@ function showDuck(killedDucks) {
     dogElement.classList.add("got-one");
   } else {
     dogElement.classList.add("got-two");
-  }
+  } showDuck(1);
 }
-showDuck(1);
-setTimeout(() => showDuck(2), 2000);
-
 
 function dogLaugh() {
   let dogElement = document.createElement("div");
@@ -42,4 +39,3 @@ function dogLaugh() {
   dogContainer.appendChild(dogElement);
   dogElement.classList.add("laugh");
 }
-dogLaugh();
