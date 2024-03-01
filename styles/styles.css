@@ -7,11 +7,8 @@ body {
   z-index: 1;
 }
 canvas {
-  background-color: aquamarine;
-  margin: 0;
-  overflow: hidden;
-  background-size: cover;
-  height: 100vh;
+  background-color: transparent;
+  height: 100%;
   width: 100%;
 }
 
