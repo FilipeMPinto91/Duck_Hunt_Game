@@ -8,35 +8,33 @@
   </head>
   <body>
 
-    <div id="startScreen">
-      <div class="startScreen__content">
-          <br><br><br>
-          <div class="startScreen__content__box" onclick="startGame()">
-              <h2 id="startButton">START GAME</h2>
-          </div>
+  <div id="startScreen">
+    <div class="startScreen__content">
+      <br><br><br>
+      <div class="startScreen__content__box" onclick="startGame()">
+        <h2 id="startButton">START GAME</h2>
       </div>
     </div>
-
   </div>
-    <div id="game-container">
-        <canvas id="canvas"></canvas>
-      <div class="dog"></div>
+
+  <div id="game-container">
+    <canvas id="canvas"></canvas>
+  </div>
+
+  <div class="dog"></div>
+
+  <!-- <div id="gun-shoot" class="gun"></div> -->
+  <!-- <div id="crosshair"></div> -->
+
+  <div id="game-starting-timer"></div>
+  <div id="round-number-display"></div>
+  
+  <div class="stats-container">
+    <div class="score"></div>
+    <div class="bottom-section">
+      <div class="flyOut"></div>
+      <div class="round-number"></div>
     </div>
-
-    <div id="gun-shoot" class="gun"></div>
-    <div id="crosshair"></div>
-
-    
-    <div id="game-starting-timer"></div>
-    <div id="round-number-display"></div>
-
-    
-    <div class="stats-container">
-      <div class="score"></div>
-      <div class="bottom-section">
-          <div class="flyOut"></div>
-          <div class="round-number"></div>
-      </div>
   </div>
 
   <div id="bullet-counter">
@@ -51,9 +49,9 @@
         <p>Score: <span id="score">0</span></p>
         <button id="restart-button">Restart</button>
     </div>
+  </div>
 
-
-  <div class="ducks-bar">
+  <!-- <div class="ducks-bar">
     <div class="ducks-bar-inner">
       Gone Away
     </div>
@@ -62,14 +60,12 @@
       <div></div>
       <div></div>
     </div>
-  </div>
+  </div> -->
 
+  <script src="./scripts/startSreen.js"></script>
+  <script src="./scripts/duck.js"></script>
+  <script src="./scripts/dog.js"></script>
+  <script src="./scripts/main.js"></script>
 
-</div>
-
-    <script src="./scripts/startSreen.js"></script>
-    <script src="./scripts/duck.js"></script>
-    <script src="./scripts/dog.js"></script>
-    <script src="./scripts/main.js"></script>
   </body>
 </html>

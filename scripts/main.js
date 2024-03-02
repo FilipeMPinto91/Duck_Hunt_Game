@@ -61,14 +61,15 @@ function startGame(){
     displayGameStartingTimer(3);
     displayRoundNumber(1);
     showBullets();
+    launchWalkoutAnimation();
     setTimeout(() => {
         startNewRound();
-    }, 3000);
+    }, 4000);
 }
 
 function startNewRound(){
     isRoundFinished = false;
-    isEnableShooting = true;
+    // isEnableShooting = true;
     isFlyOutFinished = false;
     flyOut = 1;
     ducksPerFlyOut = 2;
@@ -78,8 +79,6 @@ function startNewRound(){
     refreshScore();
     displayRoundNumber();
     startFlyOut();
-
-    setTimeout(() => startFlyOut(), 3000);
 }
 
 function startFlyOut(){
@@ -88,7 +87,7 @@ function startFlyOut(){
     showBullets();
     clearTimeout(roundsCounter);
     setCountdownToFlyOutEnd();
-    enableShooting();
+    // enableShooting();
     updateFlyOutAndRounds();
     checkBulletsAndUpdate();
     checkDucksKilledAndUpdate();
@@ -103,7 +102,7 @@ function finishFlyOut(){
     clearTimeout(flyOutTimeOut);
 
     if(missedDucks >= maxMissedDucksToLose){
-        disableShooting();
+        // disableShooting();
         deleteAllDucks();
         clearTimeout(flyOutTimeOut);
         displayGameOver(totalDucksKilled * 100);
@@ -225,10 +224,10 @@ function displayRoundNumber(roundCounter) {
     });
 }
 
-function enableShooting() {
-    isEnableShooting = true;
-    document.getElementById("crosshair").style.backgroundImage = 'url(/sprites/crosshair.png)';
-}
+// function enableShooting() {
+//     isEnableShooting = true;
+//     document.getElementById("crosshair").style.backgroundImage = 'url(/sprites/crosshair.png)';
+// }
 
 // function disableShooting() {
 //     isEnableShooting = false;

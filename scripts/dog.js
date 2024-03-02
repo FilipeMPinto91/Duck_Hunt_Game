@@ -18,7 +18,7 @@ function launchWalkoutAnimation() {
     }, 1800);
   });
 }
-launchWalkoutAnimation();
+
 
 function showDuck(killedDucks) {
   let dogElement = document.createElement("div");
