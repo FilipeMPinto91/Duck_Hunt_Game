@@ -1,14 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Duck Hunt Game</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <canvas id="canvas1"></canvas> 
-    
-    <script src="script.js"></script>
-</body>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <div id="startScreen">
+      <div class="startScreen__content">
+        <br /><br /><br />
+        <div class="startScreen__content__box" onclick="startGame()">
+          <h2 id="startButton">START GAME</h2>
+        </div>
+      </div>
+    </div>
+
+    <div id="game-container">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <!-- <div id="gun-shoot" class="gun"></div> -->
+    <!-- <div id="crosshair"></div> -->
+
+    <div id="game-starting-timer"></div>
+    <div id="round-number-display"></div>
+
+    <div class="stats-container">
+      <div class="score"></div>
+      <div class="bottom-section">
+        <div class="flyOut"></div>
+        <div class="round-number"></div>
+      </div>
+    </div>
+
+    <div id="bullet-counter">
+      <div class="bullet1"></div>
+      <div class="bullet2"></div>
+      <div class="bullet3"></div>
+      <img src="assets\images\Misc\bullet-counter.png" />
+
+      <div id="flyOut-time-left"></div>
+      <div id="game-over" class="game-over">
+        <h1>Game Over</h1>
+        <p>Score: <span id="score">0</span></p>
+        <button id="restart-button">Restart</button>
+      </div>
+    </div>
+
+    <!-- <div class="ducks-bar">
+    <div class="ducks-bar-inner">
+      Gone Away
+    </div>
+    <div class="duckies">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div> -->
+
+    <script src="./scripts/startSreen.js"></script>
+    <script src="./scripts/duck.js"></script>
+    <script src="./scripts/dog.js"></script>
+    <script src="./scripts/main.js"></script>
+  </body>
 </html>
