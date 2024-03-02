@@ -3,7 +3,6 @@ function launchWalkoutAnimation() {
   const gameContainer = document.getElementById("game-container");
   dogElement.setAttribute("class", "dog");
   gameContainer.appendChild(dogElement);
-
   dogElement.addEventListener("animationend", () => {
     dogElement.classList.add("found");
   });
@@ -19,24 +18,22 @@ function launchWalkoutAnimation() {
   });
 }
 
-function showDuck(numberOfDucksKilled) {
-  let dogElement = document.createElement("div");
+function showDuck(killedDucks) {
   let gameContainer = document.getElementById("game-container");
-  dogElement.setAttribute("class", "dog2");
+  let dogElement = document.createElement("div");
+  dogElement.setAttribute("class", "got-one", "got-two");
   gameContainer.appendChild(dogElement);
-  if (numberOfDucksKilled === 1) {
+  if (killedDucks === 1) {
     dogElement.classList.add("got-one");
-  } else if (numberOfDucksKilled === 2) {
-    dogElement.classList.add("got-two");
   } else {
-    return;
+    dogElement.classList.add("got-two");
   }
 }
 
 function dogLaugh() {
   let dogElement = document.createElement("div");
   let dogContainer = document.getElementById("game-container");
-  dogElement.setAttribute("class", "dog2");
+  dogElement.setAttribute("class", "laugh");
   dogContainer.appendChild(dogElement);
   dogElement.classList.add("laugh");
 }

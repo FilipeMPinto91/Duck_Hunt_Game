@@ -1,4 +1,5 @@
 body {
+  background-color: aquamarine;
   margin: 0;
   overflow: hidden;
   height: 100%;
@@ -74,6 +75,7 @@ canvas {
 
 .dog {
   position: absolute;
+
   top: 78%;
   left: 10%;
   width: 290px;
@@ -109,7 +111,7 @@ canvas {
     opacity: 0;
   }
 }
-.dog.found {
+.found {
   top: 75%;
   width: 290px;
   height: 160px;
@@ -121,7 +123,7 @@ canvas {
   animation: dog-found 1.75s steps(1) forwards;
 }
 
-.dog.jump {
+.jump {
   background-image: url("../assets/images/dog/jump.png");
   position: absolute;
   left: 45%;
@@ -157,18 +159,17 @@ canvas {
   }
 }
 
-.dog2.got-one {
+
+
+.got-one {
   position: absolute;
   width: 180px;
   height: 130px;
   left: 48%;
-  bottom: 13%;
+  bottom: 0;
   background-image: url("../assets/images/dog/dog1duck.png");
   background-size: 100%;
-  animation-name: dog-1-duck;
-  animation-duration: 1.65s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear; 
+  animation: dog-1-duck 1.75s steps(1) ;
   background-repeat: no-repeat;
   opacity: 0;
 
@@ -191,48 +192,39 @@ canvas {
     opacity: 0; 
   }
 }
-
-.dog2.got-two {
+.got-two {
   position: absolute;
-   width: 180px;
+  width: 180px;
   height: 130px;
   left: 48%;
-  bottom: 13%;
+  bottom: 0;
   opacity: 0;
   background-image: url("../assets/images/dog/dog2ducks.png");
   background-size: 100%;
-  animation-name: dog-2-ducks;
-  animation-duration: 1.65s;
-  animation-iteration-count: 1;
-  animation-timing-function: linear;
+  animation: dog-2-ducks 1.75s steps(1) ;
   background-repeat: no-repeat;
-  transform: scale(120%);
-
   z-index: 1;
 }
 
 @keyframes dog-2-ducks {
-  0%, 100% {
+  0%,100% {
     bottom: 0%;
     opacity: 0; 
   }
 
   30% {
-    bottom: 30.5%; 
+    bottom: 26.5%; 
     opacity: 1; 
-  }
-
-  70% {
-    bottom: 20.5%; 
   }
 
   80%, 100% {
     bottom: 0%; 
     opacity: 0; 
   }
+
 }
 
-.dog2.laugh {
+.laugh {
   position: absolute;
   left: 48%;
   width: 190px;
