@@ -52,6 +52,8 @@ const shoot = event => {
                 duckX = Math.random() * (canvas.width - duckWidth);
                 duckY = Math.random() * (canvas.height - duckHeight);
                 isDuckAlive = true;
+            } else {
+                dogLaugh();
             }
 }
 

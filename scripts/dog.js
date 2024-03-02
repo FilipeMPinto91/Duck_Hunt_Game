@@ -26,9 +26,11 @@ function showDuck(numberOfDucksKilled) {
   gameContainer.appendChild(dogElement);
   if (numberOfDucksKilled === 1) {
     dogElement.classList.add("got-one");
-  } else {
+  } else if (numberOfDucksKilled === 2) {
     dogElement.classList.add("got-two");
-  } 
+  } else {
+    return;
+  }
 }
 
 function dogLaugh() {
