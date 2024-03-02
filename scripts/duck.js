@@ -10,6 +10,7 @@ let duckY = Math.random() * (canvas.height - duckHeight);
 let isDuckAlive = true;
 let duckSpeedX = Math.random() * 10 -5;
 let duckSpeedY = Math.random() * 10 -5;
+let numberOfDucksKilled = 0;
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -44,6 +45,9 @@ const shoot = event => {
                 isDuckAlive = false;
 
                 animateFallingDuck();
+
+                numberOfDucksKilled++;
+                showDuck(numberOfDucksKilled);
 
                 duckX = Math.random() * (canvas.width - duckWidth);
                 duckY = Math.random() * (canvas.height - duckHeight);
