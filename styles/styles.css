@@ -74,7 +74,6 @@ canvas {
 
 .dog {
   position: absolute;
-
   top: 78%;
   left: 10%;
   width: 290px;
@@ -308,6 +307,12 @@ canvas {
 }
 
 .stats-container{
-  display: flex;
-  justify-content: center;
+  position: fixed;
+  right: 5%;
+  background-color: black;
+  color: whitesmoke;
+  z-index: 5;
+  bottom: 2%;
+  border: 3px solid rgb(162, 242, 119);
+  border-radius: 10px;
 }

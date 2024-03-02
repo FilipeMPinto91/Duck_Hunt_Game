@@ -3,13 +3,14 @@ const ctx = canvas.getContext(`2d`);
 const duckSprites = [];
 const fallingDuckSprites = [];
 let currentFrameIndex = 0;
-const duckWidth = 80;
+const duckWidth = 50;
 const duckHeight = 50;
 let duckX = Math.random() * (canvas.width - duckWidth);
 let duckY = Math.random() * (canvas.height - duckHeight);
 let isDuckAlive = true;
 let duckSpeedX = Math.random() * 10 -5;
 let duckSpeedY = Math.random() * 10 -5;
+let numberOfDucksKilled = 0;
 
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
@@ -45,9 +46,14 @@ const shoot = event => {
 
                 animateFallingDuck();
 
+                numberOfDucksKilled++;
+                showDuck(numberOfDucksKilled);
+
                 duckX = Math.random() * (canvas.width - duckWidth);
                 duckY = Math.random() * (canvas.height - duckHeight);
                 isDuckAlive = true;
+            } else {
+                dogLaugh();
             }
 }
 

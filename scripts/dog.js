@@ -18,18 +18,19 @@ function launchWalkoutAnimation() {
     }, 1800);
   });
 }
-launchWalkoutAnimation();
 
-function showDuck(killedDucks) {
+function showDuck(numberOfDucksKilled) {
   let dogElement = document.createElement("div");
   let gameContainer = document.getElementById("game-container");
   dogElement.setAttribute("class", "dog2");
   gameContainer.appendChild(dogElement);
-  if (killedDucks === 1) {
+  if (numberOfDucksKilled === 1) {
     dogElement.classList.add("got-one");
-  } else {
+  } else if (numberOfDucksKilled === 2) {
     dogElement.classList.add("got-two");
-  } showDuck(1);
+  } else {
+    return;
+  }
 }
 
 function dogLaugh() {
