@@ -5,9 +5,10 @@ const bodyContainer = document.body;
 const bullet1 = document.querySelector(".bullet1");
 const bullet2 = document.querySelector(".bullet2");
 const bullet3 = document.querySelector(".bullet3");
-
+const gameContainer = document.getElementById("game-container");
 let flyOutCounter = 0;
 let maxRounds = 5;
+let maxWaves = 3;
 let totalDucksKilled = 0;
 
 let roundsCounter = 1;
@@ -17,7 +18,6 @@ let ducksPerFlyOut = 2;
 
 let maxMissedDucksToLose = 3;
 let missedDucks = 0;
-let bulletCounter = 3;
 let ducksKilledFlyOut = 0; // rever linha 151
 
 let isEnableShooting = false;
@@ -57,6 +57,9 @@ function play() {
 }
 
 function startGame() {
+  isGameOver = false; // Reset the isGameOver variable
+  const gameOverElement = document.getElementById("game-over");
+  gameOverElement.style.display = "none"; // Hide the game over element
   launchApplication();
   displayGameStartingTimer(3);
   displayRoundNumber(1);
