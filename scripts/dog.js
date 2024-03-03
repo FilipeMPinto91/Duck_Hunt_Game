@@ -17,6 +17,30 @@ function launchWalkoutAnimation() {
     }, 1800);
   });
 }
+function startNewRound() {
+  ducksKilled = 0;
+  bulletCounter = 3;
+}
+function endGame() {
+  isGameOver = true;
+  const gameOverElement = document.getElementById("game-over");
+  gameOverElement.style.display = "block";
+  const scoreElement = document.getElementById("score");
+  scoreElement.textContent = totalDucksKilled * 100;
+
+  const canvas = document.getElementById('canvas');
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Stop the ducks from spawning
+  clearTimeout(flyOutTimeOut);
+
+  // Wait for 2 seconds and then start the game again
+  setTimeout(() => {
+    isGameOver = false; // Reset the isGameOver variable
+    startGame();
+  }, 2000);
+}
 
 function showDuck(numberOfDucksKilled) {
   let dogElement = document.createElement("div");

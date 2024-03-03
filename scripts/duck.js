@@ -11,7 +11,9 @@ let isDuckAlive = true;
 let duckSpeedX = Math.random() * 10 - 5;
 let duckSpeedY = Math.random() * 10 - 5;
 let numberOfDucksKilled = 0;
-
+let ducksMissed = 0;
+let ducksKilled = 0;
+let bulletCounter = 3;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -42,29 +44,41 @@ const drawDuck = () => {
   currentFrameIndex = (currentFrameIndex + 1) % duckSprites.length;
 };
 
+
 const shoot = (event) => {
   const mouseX = event.clientX - canvas.getBoundingClientRect().left;
   const mouseY = event.clientY - canvas.getBoundingClientRect().top;
-
+  const flash = document.createElement('div');
+  flash.id = 'flash';
+  document.body.appendChild(flash);
+  setTimeout(() => {
+    flash.remove();
+  }, 60);
   if (
-    mouseX >= duckX &&
-    mouseX <= duckX + duckWidth &&
-    mouseY >= duckY &&
-    mouseY <= duckY + duckHeight &&
-    isDuckAlive
+      mouseX >= duckX &&
+      mouseX <= duckX + duckWidth &&
+      mouseY >= duckY &&
+      mouseY <= duckY + duckHeight &&
+      isDuckAlive
   ) {
     isDuckAlive = false;
-
     animateFallingDuck();
-
-    numberOfDucksKilled++;
-    showDuck(numberOfDucksKilled);
-
+    ducksKilled++;
+    bulletCounter++; // Increase bullet count when a duck is hit
+    showDuck(ducksKilled);
+    if (ducksKilled === 7) {
+      startNewRound(); // Start a new round when 7 ducks are killed
+    }
     duckX = Math.random() * (canvas.width - duckWidth);
     duckY = Math.random() * (canvas.height - duckHeight);
     isDuckAlive = true;
   } else {
+    bulletCounter--; // Decrease bullet count when a shot is missed
+    ducksMissed++;
     dogLaugh();
+    if (ducksMissed === 3) {
+      endGame(); // End the game when 3 ducks are missed
+    }
   }
 };
 
@@ -81,6 +95,9 @@ const updateDuckPosition = () => {
 
 const animateDuck = () => {
   setTimeout(() => {
+    if (isGameOver) {
+      return;
+    }
     updateDuckPosition();
     drawDuck();
     requestAnimationFrame(animateDuck);
@@ -117,3 +134,5 @@ setInterval(() => {
 }, 5000);
 
 canvas.addEventListener("click", shoot);
+
+
